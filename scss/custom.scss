@@ -1,0 +1,108 @@
+@import "vars.scss";
+
+#hero {
+	min-height: 600px;
+	display: flex;
+	align-items: center;
+	.btn.btn-main.p-4.gap-3 {
+		color: $black;
+		background-color: $primary;
+		border-color: $primary;
+		&:hover {
+			color: $primary;
+			background-color: $black;
+		}
+	}
+	.bg-image {
+		position: absolute;
+		width: 100%;
+		height: 600px;
+		z-index: -1;
+		background: url(https://static.pexels.com/photos/248515/pexels-photo-248515.png),
+			linear-gradient(140deg, #020024 0%, #000001 37%, $primary 195%);
+		background-blend-mode: color-dodge;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		opacity: 0.95;
+		filter: saturate(0.6);
+	}
+}
+
+#offer {
+	article.card.rounded-5.my-4.overflow-hidden.bg-transparent {
+		border-color: $primary-darken;
+		color: $primary-darken;
+		transition: all 0.2s ease-in-out;
+		&:hover {
+			transform: scale(1.01);
+			border-color: $primary;
+			color: $primary;
+			.img-wrapper {
+				background-color: $primary-alt;
+			}
+			img.card-img-top.rounded-0 {
+				mix-blend-mode: luminosity;
+			}
+		}
+	}
+	.img-wrapper {
+		transition: all 0.3s ease-in-out;
+		background-color: $dark;
+	}
+	img.card-img-top.rounded-0 {
+		transition: all 0.3s ease-in-out;
+		filter: saturate(0);
+		mix-blend-mode: overlay;
+	}
+}
+
+#tiles {
+	article {
+		min-height: 400px;
+	}
+	.bi.bi-telephone-fill.pe-3.fs-3,
+	.bi.bi-info-circle-fill.pe-3.fs-3 {
+		position: relative;
+		top: -3px;
+	}
+	.content-text.fs-5 {
+		max-width: 700px;
+	}
+}
+
+.parallax {
+	background-image: url("https://static.pexels.com/photos/248515/pexels-photo-248515.png"),
+		linear-gradient(140deg, #ffffff 0%, #ffffff 37%, #22201b 195%);
+	filter: saturate(0.4);
+	background-blend-mode: soft-light;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.bi.bi-arrow-up-circle-fill.position-fixed {
+	color: $primary;
+	right: 20px;
+	bottom: 20px;
+	visibility: hidden;
+	opacity: 0;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+#back-to-top {
+	transition: all 0.3s ease-in-out;
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@media (min-width: 700px) {
+	#info .content-text {
+		columns: 2;
+		column-gap: 2em;
+	}
+}
